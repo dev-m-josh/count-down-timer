@@ -3,7 +3,7 @@ import './App.css';
 
 export default function Countdown() {
   // Set the target date for the countdown
-  const targetDate = new Date('2024-11-26T00:00:00');
+  const [targetDate] = useState(new Date('2024-11-26T00:00:00'));
 
   // State to hold the time remaining
   const [timeRemaining, setTimeRemaining] = useState({
@@ -18,7 +18,6 @@ export default function Countdown() {
     const interval = setInterval(() => {
       const now = new Date();
       const timeDiff = targetDate - now;
-      console.log(timeDiff)
 
       if (timeDiff <= 0) {
         clearInterval(interval); // Stop the countdown if the time is up
